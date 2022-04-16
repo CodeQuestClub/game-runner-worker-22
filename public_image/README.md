@@ -1,0 +1,1 @@
+The directory from which this image is run should have exactly 4 folders and each folder with a `main.py` at the root.

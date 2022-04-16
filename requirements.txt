@@ -1,0 +1,2 @@
+requests
+oaisudoiajsdoiausd==0.0.6

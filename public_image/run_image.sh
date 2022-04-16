@@ -1,0 +1,1 @@
+docker run --rm -it --name codequest_runner -v "$(pwd)":/codequest/bots arkhoshghalb/codequest:public_runner
