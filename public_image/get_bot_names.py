@@ -8,6 +8,7 @@ if len(dirs) != 4:
     exit()
 
 dirs = [dir[:-1] if dir[-1] == '/' else dir for dir in dirs]
+dirs = [dir.replace(' ', r'\ ') for dir in dirs]
 with open('command.sh', 'w') as f:
     args = ' '.join(dirs)
     f.write(f'codequest22 --no-visual {args}')

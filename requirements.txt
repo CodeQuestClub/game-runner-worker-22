@@ -1,2 +1,2 @@
 requests
-oaisudoiajsdoiausd==0.0.6
+oaisudoiajsdoiausd==0.0.8
