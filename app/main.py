@@ -78,13 +78,16 @@ def thread_entrypoint(thread_id):
         should_continue, data = be_patient_and(get_new_match)
 
 
-threads = []
-for i in range(config.number_of_threads):
-    threads.append(threading.Thread(target=thread_entrypoint, args=(i,)))
-    threads[-1].start()
+if config.number_of_threads > 1:
+    threads = []
+    for i in range(config.number_of_threads):
+        threads.append(threading.Thread(target=thread_entrypoint, args=(i,)))
+        threads[-1].start()
 
-for thread in threads:
-    thread.join()
+    for thread in threads:
+        thread.join()
+else:
+    thread_entrypoint(0)
 
 upload_logs()
 exit()
