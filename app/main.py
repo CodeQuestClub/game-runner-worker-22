@@ -5,7 +5,7 @@ from time import sleep
 import requests as r
 import threading
 import config
-from logs import log
+from logs import log, upload_replay_files, upload_logs
 from game import download_match_submissions, unzip_match_submissions, run_game
 
 
@@ -73,6 +73,7 @@ def thread_entrypoint(thread_id):
         successful_run, results = run_game(f'games/match_{match_index}', map_name, teams)
         if not successful_run:
             results = {team['name']: 0 for team in teams}
+        upload_replay_files(match_index)
         return_match_results(match_index, results)
         should_continue, data = be_patient_and(get_new_match)
 
@@ -85,4 +86,5 @@ for i in range(config.number_of_threads):
 for thread in threads:
     thread.join()
 
+upload_logs()
 exit()
