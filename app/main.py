@@ -58,7 +58,10 @@ def return_match_results(match_index, results):
             log(f'Results of match #{match_index} failed, retrying...')
         else:
             sent = True
-    log(f'Results of match #{match_index} sent back')
+    if sent:
+        log(f'Results of match #{match_index} sent back')
+    else:
+        log(f'Results of match #{match_index} failed. No more retries.')
 
 
 def thread_entrypoint(thread_id):
