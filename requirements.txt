@@ -1,3 +1,4 @@
 requests
 boto3
-oaisudoiajsdoiausd==0.0.8
+oaisudoiajsdoiausd==0.0.9
+pytz

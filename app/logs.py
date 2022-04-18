@@ -2,13 +2,14 @@ from datetime import datetime
 import boto3
 import config
 from glob import glob
+from pytz import timezone
 
 
 def log(msg, thread=None):
     if thread is not None:
         msg = f'T#{thread} | {msg}'
     print(msg)
-    current_time = datetime.now().strftime("%b %d - %H:%M:%S")
+    current_time = datetime.now(timezone('Australia/Melbourne')).strftime("%b %d - %H:%M:%S")
     with open('logs.txt', 'a') as f:
         f.write(f'{current_time} | {msg}\n')
 
