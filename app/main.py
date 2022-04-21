@@ -47,7 +47,7 @@ def get_new_match():
 def return_match_results(match_index, results):
     log(f'Sending results of match #{match_index} back')
     sent = False
-    retries = 5
+    retries = 2
     while not sent and retries > 0:
         retries -= 1
         response = r.post(f'{config.server_url}/match-results', json={
