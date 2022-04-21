@@ -10,7 +10,7 @@ wait_time_before_shutdown = 60  # wait this many minutes for server to become re
 number_of_threads = 1
 
 game_retries = 3
-game_timeout_time = 180  # seconds
+game_timeout_time = 240  # seconds
 
 aws_access_key_id = os.environ['client_id']
 aws_secret_access_key = os.environ['client_key']
