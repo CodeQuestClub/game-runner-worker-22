@@ -1,4 +1,4 @@
-FROM python:3.9
+FROM python:3.10
 
 RUN apt update && apt install -y vim cmake pkg-config 
 RUN apt install -y mesa-utils libglu1-mesa-dev freeglut3-dev mesa-common-dev
